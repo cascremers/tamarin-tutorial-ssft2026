@@ -114,7 +114,6 @@ Tamarin applies backward searching to identify the sources of certain terms. For
 
 ## Further Material
 
-* The folders `sessionX` contain exercises for the respective sessions. (Note that the first session will consist in a lecture and demo). 
 * This [cheatsheet](https://github.com/felixlinker/tamarin-workshop/blob/main/cheatsheet.md) from another Tamarin workshop (by Felix Linker) is a good summary of Tamarin's syntax.
 * Cas Cremers created a helpful illustration (`dependencygraph.pdf`) of Tamarin's GUI output.
 
