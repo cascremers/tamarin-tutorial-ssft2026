@@ -53,7 +53,7 @@ You can find the set of exercises that we will use in this [GitHub repository](h
 
  `git clone https://github.com/cascremers/tamarin-tutorial-ssft2026.git`
 
-We start with the files in the folder `session2`. Open the Markdown file `session2/Exercise1.md` and read the exercise description. Once you feel ready, add the missing rules to the skeleton file `session2/skeletons/Protocol1.spthy` using your favorite text editor. There are syntax highlighting plugins for [VS Code](https://marketplace.visualstudio.com/items?itemName=tamarin-prover.tamarin-prover), VIM or Emacs described [here](https://tamarin-prover.com/editors.html) that you could use.
+We start with the files in the folder `sessionA`. Open the Markdown file `sessionA/Exercise1.md` and read the exercise description. Once you feel ready, add the missing rules to the skeleton file `sessionA/skeletons/Protocol1.spthy` using your favorite text editor. There are syntax highlighting plugins for [VS Code](https://marketplace.visualstudio.com/items?itemName=tamarin-prover.tamarin-prover), VIM or Emacs described [here](https://tamarin-prover.com/editors.html) that you could use.
 
 #### Practical Exercises
 
@@ -61,17 +61,17 @@ We start with the files in the folder `session2`. Open the Markdown file `sessio
 
 Start with…
 
-- `session2/Exercise1.md`  
-- `session2/Exercise2.md`  
-- `session2/Exercise3.md`
+- `sessionA/Exercise1.md`  
+- `sessionA/Exercise2.md`  
+- `sessionA/Exercise3.md`
 
 ##### \[Session B: Advanced\]
 
 Easy? Then feel free to continue with ...
 
-- `session3/Exercise1.md`  
-- `session3/Exercise2.md`  
-- `session3/Exercise3.md`
+- `sessionB/Exercise1.md`  
+- `sessionB/Exercise2.md`  
+- `sessionB/Exercise3.md`
 
 You find skeletons to work with in the respective subdirectories `skeletons`. Sample solutions that you can use as hints and to check your solution are provided in the subdirectories `solutions`.
 
