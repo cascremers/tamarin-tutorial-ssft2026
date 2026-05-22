@@ -107,6 +107,7 @@ You can either decide to close the other application using port 3001 (likely a s
 **I get well-formedness errors. What should I do?**
 
 Tamarin provides some details on the error. Are there some differences in fact usage among different rules? Do some variable types differ? Occur variables in the action facts or conclusions that are not part of the premises? Check for such problems and fix your model accordingly.  
+
 **I get partial deconstructions. What should I do?**
 
 Tamarin applies backward searching to identify the sources of certain terms. For some rules, these rules do not restrict these terms sufficiently for Tamarin to find all of them within the time bounds. Try to change your model accordingly or try to pass `--auto-sources` as a command line parameter when using Tamarin locally.   
