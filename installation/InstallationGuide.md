@@ -1,7 +1,7 @@
 
 ### Installing Tamarin on your machine
 
- Please install and use the latest release version 1.8.0. of the Tamarin prover for this lab.
+ Please install and use at least version 1.12.0. of the Tamarin prover for this lab.
  Instructions to install and use Tamarin can be found in the [Installation section](https://tamarin-prover.com/manual/master/book/002_installation.html) of the Tamarin manual.
 
 
@@ -18,12 +18,10 @@
 
 * If you use Windows as your main operating system, you will need to either use a VM or install Tamarin via the [Linux for Windows Subsystem](https://docs.microsoft.com/en-us/windows/wsl/install). Some common issues with installing Tamarin on WSL are listed below.
 * If you compile Tamarin directly or use Homebrew, be sure to check the resulting binary is on your system $PATH.
-* We tested the installation using Homebrew on Apple’s M1 chips but not on M2.
 * Installing Tamarin with Homebrew might result in some “Too many open files” error. Try
 to re-run the installation with brew.
 * Tamarin only runs on WSL2. Check your version with wsl -l -v. You can change the version to WSL2 with wsl --set-version <distro name> 2.
 * If you manually install the Haskell Stack, you could encounter problems regarding zlib. In that case, install libghc-zlib-dev with your package manager.
-* If you manually install Maude, make sure that you install Maude 2.7.1. Installing Maude with your package manager might result in an earlier version. Also, Tamarin does not support newer versions, such as 3.2.
 * After manually installing maude, check that it works by calling maude.linux64. Install missing packages with your package manager.
 * Make sure to add Maude to your path.
 
