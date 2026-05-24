@@ -36,5 +36,5 @@ the protocol to fix the problem?
 
 * Now, we are going to revisit the authentication property that Alice gets.
 Is this the _strongest_ authentication property you can state for Alice, or
-can you strengthen the lemma? (Hint: The [Tamarin manual](https://tamarin-prover.com/manual/develop/tex/tamarin-manual.pdf) has a section
-on property specification which can help you with the formulation of the property)
+can you strengthen the lemma? (Hint: The [Tamarin book](https://tamarin-prover.com/book/downloads/Tamarin%20book-Draft%20v0.9.5.pdf) has a section
+on property specification that can help you with the formulation of the property)
