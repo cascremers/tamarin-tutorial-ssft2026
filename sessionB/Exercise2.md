@@ -21,7 +21,7 @@ problem? Can Tamarin prove the lemma if you use induction? If no, why?
 (Hint: Look at the induction hypothesis.)
 
 * To avoid the looping behavior from the previous task, we will now specify
-a _resuable_ intermediate lemma that Tamarin can use to finish the proof.
+a _reusable_ intermediate lemma that Tamarin can use to finish the proof.
 State a reusable lemma that establishes that a client sending a message must always
 be preceded by the same client entering the `SESSION` state. Can you prove the
 lemma? If not, can induction help us this time? If yes, why? What is the

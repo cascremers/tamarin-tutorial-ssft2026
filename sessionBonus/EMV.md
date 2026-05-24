@@ -14,14 +14,14 @@ In the EMV contactless transaction, after the card-terminal interaction is compl
 
 
 If the transaction is accepted offline (i.e. second case), which occurs in some cases where the transaction amount is small or Internet connectivity is limited, the funds are not immediately transferred from the cardholder’s account to the merchant’s, but at the end of the day or even within a few days. If the transaction is otherwise required to be authorized by the card issuer (i.e. third case), which
-is the most common scenario, then the terminal goes online, establishes a com- munication channel with the issuer, and sends the authorization request. Upon reception of the request, the card issuer undergoes a number of checks, such as that the cardholder’s account has sufficient funds for the amount requested and that the card-produced cryptographic proof for the transaction is correct. If everything checks out, the issuer sends back to the terminal the authorization response. 
+is the most common scenario, then the terminal goes online, establishes a communication channel with the issuer, and sends the authorization request. Upon reception of the request, the card issuer undergoes a number of checks, such as that the cardholder’s account has sufficient funds for the amount requested and that the card-produced cryptographic proof for the transaction is correct. If everything checks out, the issuer sends back to the terminal the authorization response. 
 
 Here is a graphical representation of the interaction between the card, the terminal, and the issuer in a contactless transaction.
 
 ![Agents](./figures/emv_fig1.png)
 
 
-The card-terminal interaction is determined by one of the six EMV contactless protocols (called kernels in EMV’s terminology), each of them corresponds to a dif- ferent card brand: Mastercard, Visa, American Express, JCB, Discover, and Union- Pay. As said before, we will focus on a simplified variation of the Visa protocol. The specifications of each of these kernels are available at [https://www.emvco.com](https://www.emvco.com), but you do not need to read them for this exercise!
+The card-terminal interaction is determined by one of the six EMV contactless protocols (called kernels in EMV’s terminology), each of them corresponds to a different card brand: Mastercard, Visa, American Express, JCB, Discover, and UnionPay. As said before, we will focus on a simplified variation of the Visa protocol. The specifications of each of these kernels are available at [https://www.emvco.com](https://www.emvco.com), but you do not need to read them for this exercise!
 
 ### The (simplified) Visa protocol
 

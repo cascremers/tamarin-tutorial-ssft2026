@@ -1,6 +1,6 @@
 ## Exercise 2.3: Leaking keys
 
-The protocol of the previous task didn't achieve the security properties we wanted it to. In particular Bob had no guarantee Alice actually sent him the message. 
+The protocol of the previous task did not achieve the security properties we wanted it to. In particular Bob had no guarantee Alice actually sent him the message. 
 
 To fix this, we modify the protocol so that Alice signs the message she sends: 
 
