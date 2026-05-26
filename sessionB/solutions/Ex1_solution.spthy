@@ -47,8 +47,9 @@ let kAB = adec(key, ~skb)
 in 
    [ In(<$A, key, mess>), Fr(~mb), !SecretKey($B, ~skb), !PublicKey($A, pka) ] 
    --[  Eq(verify(masign, <ma, $B>, pka), true),
-        SecretB($B, $A, ~mb),  
-        FinishedB($B, $A,ma, ~mb)  ]->
+        SecretB($B, $A, ~mb),
+        RunningB($B, $A, ma, ~mb),
+        CommitB($B, $A, ma, ~mb)  ]->
    [ Out(senc(~mb, kAB)) ]
 
 rule AliceReceives:
@@ -59,7 +60,7 @@ let messB = senc(~mb, ~kAB)
 in
 [ AliceSent($A,~ma,$B, ~kAB)
   , In(messB) ]
---[ SecretA($A, $B, ~ma), FinishedA($A, $B, ~ma, ~mb)
+--[ SecretA($A, $B, ~ma), CommitA($A, $B, ~ma, ~mb)
    // SOL: Need to add `Neq` restriction to avoid replay of `~ma`.
    // SOL: This is reasonable (even in a computational setting) since Bob generates
    // SOL: the same bitstring with only negligible probability.
@@ -80,14 +81,14 @@ restriction Nequality:
 //should verify
 lemma executable:
 exists-trace "Ex #i #j A B ma mb.
-FinishedA(A, B, ma, mb)@i & FinishedB(B,A,ma,mb)@j& not (A=B)"
+CommitA(A, B, ma, mb)@i & RunningB(B,A,ma,mb)@j& not (A=B)"
  
 //should verify
 lemma secrecyA:
 "All #i m A B.
  SecretA(A, B, m) @ i ==> ( (not (Ex #j. K(m) @ j)) | (Ex #j. Compromised(A)@j) | (Ex #j. Compromised(B)@j))"
 
-//should falsify
+//should verify
 lemma secrecyB:
 "All #i m B A. 
 SecretB(B, A, m) @ i ==>  ( (not (Ex #j. K(m) @ j)) | (Ex #j. Compromised(A)@j) | (Ex #j. Compromised(B)@j))"
@@ -96,23 +97,23 @@ SecretB(B, A, m) @ i ==>  ( (not (Ex #j. K(m) @ j)) | (Ex #j. Compromised(A)@j) 
 //SOL: Actually a bit more than aliveness since A and B agree on the message `ma`.
 lemma alivesness_B:
 "All #i ma mb A B.
-FinishedB(B, A, ma, mb) @ i ==> (Ex C #j. RunningA(A, C, ma) @ j) | (Ex #j. Compromised(A) @ j)"
+CommitB(B, A, ma, mb) @ i ==> (Ex C #j. RunningA(A, C, ma) @ j) | (Ex #j. Compromised(A) @ j)"
 
 //SOL: should verify in the 'fixed' version but not in the original version
 lemma non_inj_agreement_B:
 "All #i ma mb A B.
-FinishedB(B, A, ma, mb) @ i ==> (Ex  #j. RunningA(A, B, ma) @ j) | (Ex #j. Compromised(A) @ j)"
+CommitB(B, A, ma, mb) @ i ==> (Ex  #j. RunningA(A, B, ma) @ j) | (Ex #j. Compromised(A) @ j)"
 
 //SOL: should verify
 lemma non_inj_agreement_A:
 "All #i ma mb A B.
-FinishedA(A, B, ma, mb) @ i ==> (Ex #j. FinishedB(B, A, ma, mb) @ j) | (Ex #j. Compromised(B) @ j)"
+CommitA(A, B, ma, mb) @ i ==> (Ex #j. RunningB(B, A, ma, mb) @ j) | (Ex #j. Compromised(B) @ j)"
 
 //SOL: should verify
 //SOL: Instead of writing a new authentication lemma, we can prove uniqueness
-//SOL: of `FinishedA` to get the injective agreement.
-lemma FinishedA_unique:
+//SOL: of `CommitA` to get the injective agreement.
+lemma CommitA_unique:
 "All #i #j ma mb A1 B1 A2 B2.
-FinishedA(A1, B1, ma, mb) @ i & FinishedA(A2, B2, ma, mb) @ j ==> #i = #j"
+CommitA(A1, B1, ma, mb) @ i & CommitA(A2, B2, ma, mb) @ j ==> #i = #j"
 
 end

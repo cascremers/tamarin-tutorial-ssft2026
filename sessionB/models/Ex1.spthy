@@ -45,14 +45,14 @@ in
    [ In(<$A, key, mess>), Fr(~mb), !SecretKey($B, ~skb), !PublicKey($A, pka) ] 
    --[  Eq(verify(masign, ma, pka), true),
         SecretB($B, $A, ~mb),  
-        FinishedB($B, $A,ma, ~mb)  ]->
+        RunningB($B, $A,ma, ~mb)  ]->
    [ Out(senc(~mb, kAB)) ]
 
 rule AliceReceives:
 let mb = sdec(messB, ~kAB)
 in
 [ AliceSent($A,~ma,$B, ~kAB), In(messB) ]
---[ SecretA($A, $B, ~ma), FinishedA($A, $B, ~ma, mb)  ]->
+--[ SecretA($A, $B, ~ma), CommitA($A, $B, ~ma, mb)  ]->
 []
 
 restriction Equality:
@@ -65,7 +65,7 @@ restriction Equality:
 /* Executability check: */
 lemma executable:
 exists-trace "Ex #i #j A B ma mb.
-FinishedA(A, B, ma, mb)@i & FinishedB(B,A,ma,mb)@j& not (A=B)"
+CommitA(A, B, ma, mb)@i & RunningB(B,A,ma,mb)@j& not (A=B)"
  
 lemma secrecyA:
 "All #i m A B.

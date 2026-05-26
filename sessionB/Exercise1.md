@@ -8,9 +8,8 @@ Here's a reminder of what the protocol looks like:
 
 ### Security Properties: Authentication
 The goal of this exercise is to familiarize yourself with _authentication_
-properties. From the lecture, you already have some knowledge about the guarantees
-these properties give, how to express
-them, and that some of them are more _powerful_ than others. For more detailed
+properties. We provide some basic knowledge on the guarantess in [Authentication_Hierarchy](Authentication_Hierarchy.pdf).
+ For more detailed
 information, we refer to the [seminal paper](https://d1wqtxts1xzle7.cloudfront.net/32769013/download-libre.pdf?1391188461=&response-content-disposition=inline%3B+filename%3DA_Hierarchy_of_Authentication_Specificat.pdf&Expires=1716473894&Signature=ezDCbtcZHH25zHvd2xFgJgIiZ-l5B6kVlrryukF8-myHPgQBWt8f1dMZ2yqN1bX3c9Ywaq8YEzEI-aPazaXx6JcF9~vbQLb6-b6hdh8DolOw3dgUxM-K-YRK3TUESQV-cPwFOV4Le7Kk~W1~b7Jz9ipBu9AXvBv-xb~IY7gmiCUdHpTpoTcRL9tXUgEpaVHwlhcE4sVlu6WvuVSQ-5KYfDh5M5bxXVakJymLgij4l0ZHdLK4JoAK-z7EHfjLOFyU7eFqUGrO2hVC-2hN9gQLs4acMxS2zEZkP924QrbA34jAQVmSngNZNyRMgk0mhE2sHsLFDqAKHSjxMjxJ7E3D-A__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) ``A Hierarchy of Authentication Specifications''
 by Gavin Lowe. There is no need to fully read the paper for this exercise,
 inspecting Section 2 is enough.
@@ -21,8 +20,8 @@ view of the protocol run? Does Alice get any guarantees related to Bob's
 identity and his view of the protocol run?
 
 ### Tasks
-* Start by writing an authentication lemma for Alice. Use the `FinishedA` and
-`FinishedB` facts for this. Do you expect Alice and Bob to agree on each other's
+* Start by writing an authentication lemma for Alice. Use the `CommitA` and
+`RunningB` facts for this. Do you expect Alice and Bob to agree on each other's
 identity? Do you expect them to agree on the messages? If you cannot prove
 your lemma, use the interactive mode to inspect the counterexample. Is it a
 _real_ attack? If not, what is the problem? Can you change your model to exclude
